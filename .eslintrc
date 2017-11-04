@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-underscore-dangle": "off",
+    "global-require": "off",
+    "arrow-parens": ["error", "always"],
+    "class-methods-use-this": "off",
+    "valid-jsdoc": [2, { "requireReturn": false }],
+    "object-curly-newline": ["error", { "multiline": true, "consistent": true }]
+  }
+}
