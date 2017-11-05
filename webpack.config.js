@@ -2,6 +2,7 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
 // Constant with our paths
 const paths = {
@@ -11,17 +12,15 @@ const paths = {
 
 // Webpack configuration
 module.exports = {
-  entry: path.join(paths.SRC, 'client.jsx'),
+  entry: [
+    'react-hot-loader/patch',
+    path.join(paths.SRC, 'client.jsx'),
+  ],
   output: {
     path: paths.DIST,
     filename: 'bundle.js',
+    publicPath: '/',
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html',
-    }),
-    new ExtractTextPlugin('style.css'),
-  ],
   module: {
     rules: [
       { test: /\.jsx?$/, use: ['eslint-loader'], enforce: 'pre', exclude: /node_modules/ },
@@ -51,4 +50,15 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: paths.DIST,
+    hot: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: 'index.html' }),
+    new ExtractTextPlugin('style.css'),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };

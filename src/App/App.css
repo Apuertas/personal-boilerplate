@@ -1,3 +1,7 @@
 .root {
   color: red;
 }
+
+.container {
+  padding: 5px;
+}

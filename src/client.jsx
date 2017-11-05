@@ -1,9 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
 import './main.css';
 import App from './App/App';
 
-const destinationNode = document.getElementById('root');
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root'),
+  );
+};
 
-ReactDOM.render(<App />, destinationNode);
+render(App);
+
+// Webpack Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./App/App', () => { render(App); });
+}

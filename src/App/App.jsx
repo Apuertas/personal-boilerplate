@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import _styles from './App.css';
 
@@ -18,7 +19,7 @@ export default class App extends Component {
     const { styles, title } = this.props;
 
     return (
-      <div className={styles.root}>
+      <div className={cx(styles.root, styles.container)}>
         {title}
       </div>
     );
