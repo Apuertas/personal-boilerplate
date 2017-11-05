@@ -11,6 +11,13 @@
     "arrow-parens": ["error", "always"],
     "class-methods-use-this": "off",
     "valid-jsdoc": [2, { "requireReturn": false }],
-    "object-curly-newline": ["error", { "multiline": true, "consistent": true }]
+    "object-curly-newline": ["error", { "multiline": true, "consistent": true }],
+
+
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/interactive-supports-focus": "off"
   }
 }
