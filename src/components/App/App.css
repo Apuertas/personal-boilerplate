@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  font-size: 96px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  width: 240px;
+}
+
+.button {
+  color: #fff;
+  background-color: #009688;
+  font-size: 32px;
+  border-radius: 32%;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  line-height: 65px;
+  user-select: none;
+}
